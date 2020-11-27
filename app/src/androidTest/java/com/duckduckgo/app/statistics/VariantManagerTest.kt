@@ -71,15 +71,29 @@ class VariantManagerTest {
     @Test
     fun fireButtonEducationControlGroupVariantIsActive() {
         val variant = variants.first { it.key == "zn" }
-        assertEqualsDouble(1.0, variant.weight)
+        assertEqualsDouble(0.0, variant.weight)
     }
 
     @Test
     fun fireButtonEducationVariantHasExpectedWeightAndFeatures() {
         val variant = variants.first { it.key == "zs" }
-        assertEqualsDouble(1.0, variant.weight)
+        assertEqualsDouble(0.0, variant.weight)
         assertEquals(1, variant.features.size)
         assertTrue(variant.hasFeature(FireButtonEducation))
+    }
+
+    @Test
+    fun roleManagerDefaultBrowserDialogControlHasExpectedWeightAndFeatures() {
+        val variant = variants.first { it.key == "zt" }
+        assertEqualsDouble(1.0, variant.weight)
+        assertTrue(variant.features.isEmpty())
+    }
+
+    @Test
+    fun roleManagerDefaultBrowserDialogTreatmentHasExpectedWeightAndFeatures() {
+        val variant = variants.first { it.key == "zu" }
+        assertEqualsDouble(1.0, variant.weight)
+        assertTrue(variant.features == listOf(SetDefaultBrowserDialog))
     }
 
     @Test

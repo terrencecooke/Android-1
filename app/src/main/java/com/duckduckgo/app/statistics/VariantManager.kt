@@ -55,10 +55,10 @@ interface VariantManager {
             Variant(key = "zi", weight = 0.0, features = listOf(VariantFeature.SerpHeaderRemoval), filterBy = { noFilter() }),
 
             // Fire Education Experiments
-            Variant(key = "zn", weight = 1.0, features = emptyList(), filterBy = { isEnglishLocale() }),
+            Variant(key = "zn", weight = 0.0, features = emptyList(), filterBy = { isEnglishLocale() }),
             Variant(
                 key = "zs",
-                weight = 1.0,
+                weight = 0.0,
                 features = listOf(VariantFeature.FireButtonEducation),
                 filterBy = { isEnglishLocale() }
             ),
